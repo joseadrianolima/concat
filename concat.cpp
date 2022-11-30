@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-string ConcatERemove(string s, string t, int k)
+string ConcatRemove(string s, string t, int k)
 {
     int s_size = s.length();
     int t_size = t.length();
@@ -23,7 +23,7 @@ string ConcatERemove(string s, string t, int k)
             s = s + t.front();
             t.erase(0, 1);
         }
-        ret = "Sim  >>>  " + s;
+        ret = "Yes  >  " + s;
     }
 
     return ret;
@@ -33,7 +33,7 @@ int main(int argc, char *argv[])
 {
 
     if (argc != 4)
-        cout << "Informe a variável s(string), t(string) e k(contador).";
+        cout << "Enter the variables. Ex. s(string), t(string) e k(counter).";
     else
     {
         string s = argv[1];
@@ -41,13 +41,15 @@ int main(int argc, char *argv[])
         int k = stoi(argv[3]);
         if ((s.length() > 100) or (t.length() > 100) or (k > 100))
         {
-            cout << "O limite máximo de caracters para s e t, é igual a 100." << endl;
-            cout << "O limite máximo para k é 100" << endl;
+            cout << "The max limit of characters for s and t is 100." << endl;
+            cout << "The max limit for k is 100" << endl;
         }
         else
         {
-            string a = ConcatERemove(s, t, k);
+            string a = ConcatRemove(s, t, k);
             cout << a;
         }
     }
+
+    return 0;
 }
